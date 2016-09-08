@@ -7,7 +7,9 @@ body {
 }
 
 #map {
-  border: 2px dashed;
+  z-index: 0;
+  border-radius: 10px;
+  border: 1px black solid;
   width: 500px;
   height: 500px;
   margin: 0 auto;
@@ -15,4 +17,8 @@ body {
 
 #form {
   margin: auto;
+}
+
+.gm-style {
+  z-index: 1;
 }
