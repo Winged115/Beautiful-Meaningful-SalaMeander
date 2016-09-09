@@ -7,10 +7,10 @@ body {
 }
 
 #map {
-  border: 2px dashed;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
+  border: 2px;
+  width: 99.5%;
+  height: 75%;
+  margin: 5px auto;
 }
 
 #form {
