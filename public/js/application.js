@@ -8,11 +8,6 @@
 
 // }
 
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
-
 function initMap() {
 	var styles = [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}];
 	// var styles = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}];
@@ -24,7 +19,7 @@ function initMap() {
     // mapTypeControl: false
   });
 
-  // Try HTML5 geolocation.
+  // HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       // var bounds = new google.maps.LatLngBounds();
@@ -41,6 +36,7 @@ function initMap() {
       	map: map,
       	animation: google.maps.Animation.DROP,
       	title: 'Location'
+      	// draggable: true
       });
       marker.addListener('click', function() {
       	infoWindow.open(map, marker);
@@ -48,15 +44,15 @@ function initMap() {
       var circle = new google.maps.Circle({
 		    center: pos,
 		    map: map,
-		    strokeColor: '#fff',
+		    strokeColor: '#ff0000',
 		    strokeWeight: .5,
 		    strokeOpacity: 0.5,
 		    fillColor: '#ff0000',
 		    fillOpacity: 0.1,
-		    radius: 5 * 1609.34
+		    radius: 2 * 1609.34
   		});
   		map.fitBounds(circle.getBounds());
-  		
+
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
